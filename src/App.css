@@ -21,7 +21,7 @@ body {
     border: 3px solid #65a4e8;
     border-radius: 10px;
     padding: 20px;
-    width: 320px;
+   
 }
 
 .display {
@@ -34,7 +34,7 @@ body {
     text-align: center;
     margin-bottom: 20px;
     color: black;
-    max-height: 50px;
+    /* max-height: 50px; */
     display: flex;
     justify-content: center;
     align-items: center;
