@@ -70,3 +70,52 @@ button:disabled {
     cursor: not-allowed;
 }
 
+.App {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* расстояние между Settings и Counter */
+    min-height: 100vh;
+}
+
+.settings {
+    border: 3px solid #65a4e8;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.inputs {
+    background-color: #2d3748; /* темный фон как на макете */
+    border: 3px solid #65a4e8;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.input-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.input-row:last-child {
+    margin-bottom: 0;
+}
+
+.input-row label {
+    color: #65a4e8;
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 15px;
+    min-width: 140px;
+}
+
+.input-row input {
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-size: 24px;
+    text-align: center;
+    width: 100px;
+}

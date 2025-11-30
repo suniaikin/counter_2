@@ -1,9 +1,11 @@
 import { Button } from "./Button";
-import { Display } from "./Display";
 
 type CountPropsType = {
     count: number;
     maxValue: number;
+    startValue: number;
+    isValid: boolean;
+    isConfigured: boolean;
     onIncrement: () => void;
     onReset: () => void;
 };
@@ -11,22 +13,36 @@ type CountPropsType = {
 export const Counter = ({
     count,
     maxValue,
+    startValue,
+    isValid,
+    isConfigured,
     onIncrement,
     onReset,
 }: CountPropsType) => {
+    const getDisplayClass = () => {
+        if (!isValid || !isConfigured) return "display";
+        return count === maxValue ? "display red" : "display";
+    };
+
+    const getDisplayContent = () => {
+        if (!isValid) return "Incorrect value!";
+        if (!isConfigured) return "press 'set' button";
+        return count;
+    };
+
     return (
         <div className="counter">
-            <Display count={count} maxValue={maxValue} />
+            <div className={getDisplayClass()}>{getDisplayContent()}</div>
             <div className="buttons">
                 <Button
                     title="inc"
                     onClick={onIncrement}
-                    disabled={count === maxValue}
+                    disabled={!isConfigured || !isValid || count === maxValue}
                 />
                 <Button
                     title="reset"
                     onClick={onReset}
-                    disabled={count === 0}
+                    disabled={!isConfigured || !isValid || count === startValue}
                 />
             </div>
         </div>
